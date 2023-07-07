@@ -19,5 +19,9 @@
     "devDependencies": {
         "typescript": "^5.0.2",
         "vite": "^4.4.0"
+    },
+    "dependencies": {
+      "nanoid": "~4.0.2",
+      "@types/react": "~18.2.14"
     }
 }

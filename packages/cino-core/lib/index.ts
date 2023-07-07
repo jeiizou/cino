@@ -1,3 +1,2 @@
-export function add(a: number, b: number) {
-    return a + b;
-}
+export type * from './cino.type'
+export { Cino } from './cino';
