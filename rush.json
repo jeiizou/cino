@@ -332,10 +332,6 @@
    * 3. It's useful to have a centralized inventory of all projects and their important metadata.
    */
   "projects": [
-    {
-      "packageName": "cino-core",
-      "projectFolder": "packages/cino-core"
-    }
     // {
     //   /**
     //    * The NPM package name of the project (must match package.json)
@@ -433,5 +429,13 @@
     //   "reviewCategory": "tools",
     //   "tags": [ "tools" ]
     // }
+    {
+      "packageName": "cino-core",
+      "projectFolder": "packages/cino-core"
+    },
+    {
+      "packageName": "cino-react-ui",
+      "projectFolder": "packages/cino-react-ui"
+    }
   ]
 }
