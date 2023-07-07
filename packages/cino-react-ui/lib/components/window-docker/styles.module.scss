@@ -1,0 +1,63 @@
+@use 'sass:math';
+@import '@/ui/global.scss';
+
+$size: 30px;
+$statusSize: 8px;
+
+.window-docker {
+  position: absolute;
+  z-index: 200;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba($color: #000, $alpha: 0.2);
+  padding: 10px;
+  border-radius: 10px;
+
+  display: flex;
+}
+
+.window-docker__stable-container {
+  position: relative;
+  padding-right: 10px;
+  margin-right: 10px;
+
+  display: flex;
+
+  &::after {
+    content: '';
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 2px;
+    background-color: #eaeaea;
+    border-radius: 1px;
+    right: 0;
+    top: 0;
+  }
+}
+
+.window-docker__item {
+  @extend .app_icon;
+
+  &:hover {
+    background-color: #aaa;
+  }
+
+  &--hidden {
+    &::after {
+      position: absolute;
+      right: 0;
+      top: 0;
+      content: '';
+      width: $statusSize;
+      height: $statusSize;
+      border-radius: math.div($statusSize, 2);
+      background-color: red;
+    }
+  }
+}
+
+.window-docker__item + .window-docker__item {
+  margin-left: 10px;
+}
