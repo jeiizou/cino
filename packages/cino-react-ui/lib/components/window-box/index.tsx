@@ -4,8 +4,8 @@ import styles from './style.module.scss';
 
 import { useDebounce, useSize } from 'ahooks';
 
-import closeSvg from '@/common/assets/imgs/close.svg';
-import minusSvg from '@/common/assets/imgs/minus.svg';
+import closeSvg from '@/assets/close.svg';
+import minusSvg from '@/assets/minus.svg';
 import { EVENT_TYPE, WindowModel } from '../window-layout/window-model';
 import { useMove } from '@/hooks/basic/use-move';
 import { ViewInfo } from 'cino-core';

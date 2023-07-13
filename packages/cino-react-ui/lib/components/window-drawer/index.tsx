@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './styles.module.scss';
-import AppIconSvg from '@/common/assets/imgs/app.svg';
+import AppIconSvg from '@/assets/app.svg';
 
 type AppDrawerProps = {
     // HOLD

@@ -1,5 +1,5 @@
-import { ViewInfo } from '@/core/cino.type';
-import { createModel } from '@/ui/hooks/basic/use-model';
+import { ViewInfo } from 'cino-core';
+import { createModel } from '@/hooks/basic/use-model';
 import { useEventEmitter } from 'ahooks';
 import { useState } from 'react';
 

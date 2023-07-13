@@ -9,8 +9,8 @@ export default defineConfig({
     plugins: [react(), sassDts(), dts()],
   resolve: {
     alias: {
-      '@': join(__dirname, 'src'),
-      '@core': join(__dirname, 'src/core'),
+      '@': join(__dirname, 'lib'),
+      '@components': join(__dirname, 'lib/components'),
     },
   },
   css: {

@@ -1,3 +1,5 @@
+/// <reference types="vite/client" />
+
 type StoreValue = any; // eslint-disable-line @typescript-eslint/no-explicit-any
 
 // resource
@@ -13,3 +15,9 @@ declare module '*.woff2';
 declare module '*.scss';
 declare module '*.less';
 declare module '*.css';
+
+type SizeType = {
+    width: number;
+    height: number;
+  };
+  

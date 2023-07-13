@@ -4,7 +4,7 @@ import { EVENT_TYPE, WindowModel } from '../window-layout/window-model';
 import { CinoModel } from '@/hooks/use-cino';
 import classnames from 'classnames';
 
-import AppSvg from '@/common/assets/imgs/app.svg';
+import AppSvg from '@/assets/app.svg';
 import { CinoEventsName, CinoApplication } from 'cino-core';
 import AppIcon from '../app-icon';
 
