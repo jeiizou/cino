@@ -1,4 +1,4 @@
-import { CinoAppStatus, CinoApplication } from '@/lib-entry';
+import { CinoAppStatus, CinoApplication } from 'cino-core';
 import React, { useMemo } from 'react';
 import style from './index.module.scss';
 import classNames from 'classnames';
