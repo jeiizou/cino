@@ -23,6 +23,6 @@
             "@components/*": ["lib/components/*"]
         }
     },
-    "include": ["lib"],
+    "include": ["lib", "main.tsx"],
     "references": [{ "path": "./tsconfig.node.json" }]
 }

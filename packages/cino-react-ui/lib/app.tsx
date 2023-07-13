@@ -4,7 +4,7 @@ import React from 'react';
 import './app.scss';
 
 interface CinoDesktopProps {
-    children: React.ReactNode | string;
+    children?: React.ReactNode | string;
 }
 
 export const CinoDesktop = ({ children }: CinoDesktopProps) => {
