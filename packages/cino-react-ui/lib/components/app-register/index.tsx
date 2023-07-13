@@ -3,10 +3,10 @@ import { CinoModel } from '../../hooks/use-cino';
 import React, { useEffect } from 'react';
 
 type AppRegisterProps = {
-    apps: CinoApplication[];
+    apps?: CinoApplication[];
 };
 
-export default function AppRegister({
+export function AppRegister({
     apps = [],
 }: AppRegisterProps): React.ReactElement {
     const { cino } = CinoModel.useContext();
