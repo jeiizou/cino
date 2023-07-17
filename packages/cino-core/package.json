@@ -1,28 +1,29 @@
 {
-    "name": "cino-core",
-    "private": true,
-    "version": "0.0.0",
-    "type": "module",
-    "typings": "./dist/index.d.ts",
-    "main": "./dist/cino-core.umd.cjs",
-    "module": "./dist/cino-core.js",
-    "exports": {
-        ".": {
-            "import": "./dist/cino-core.js",
-            "require": "./dist/cino-core.umd.cjs"
-        }
-    },
-    "scripts": {
-        "dev": "vite",
-        "build": "vite build && tsc",
-        "preview": "vite preview"
-    },
-    "devDependencies": {
-        "typescript": "^5.0.2",
-        "vite": "^4.4.0"
-    },
-    "dependencies": {
-      "nanoid": "~4.0.2",
-      "@types/react": "~18.2.14"
+  "name": "cino-core",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "typings": "./dist/index.d.ts",
+  "main": "./dist/cino-core.umd.cjs",
+  "module": "./dist/cino-core.js",
+  "exports": {
+    ".": {
+      "import": "./dist/cino-core.js",
+      "require": "./dist/cino-core.umd.cjs"
     }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && tsc",
+    "build:watch": "vite build && tsc",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.2",
+    "vite": "^4.4.0"
+  },
+  "dependencies": {
+    "nanoid": "~4.0.2",
+    "@types/react": "~18.2.14"
+  }
 }

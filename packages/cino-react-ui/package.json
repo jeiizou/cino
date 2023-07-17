@@ -1,44 +1,41 @@
 {
-    "name": "cino-react-ui",
-    "private": true,
-    "version": "0.0.0",
-    "type": "module",
-    "typings": "./dist/lib/index.d.ts",
-    "scripts": {
-        "dev": "vite",
-        "build": "tsc && vite build",
-        "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-        "preview": "vite preview"
-    },
-    "exports": {
-        ".": {
-            "import": "./dist/cino-react-ui.js",
-            "require": "./dist/cino-react-ui.umd.cjs"
-        }
-    },
-    "dependencies": {
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0",
-        "cino-core": "workspace:*",
-        "ahooks": "~3.7.8",
-        "vite-plugin-sass-dts": "~1.3.6",
-        "vite-plugin-dts": "~3.1.0",
-        "prettier": "~3.0.0",
-        "classnames": "~2.3.2",
-        "nanoid": "~4.0.2"
-    },
-    "devDependencies": {
-        "@types/react": "^18.2.14",
-        "@types/react-dom": "^18.2.6",
-        "@typescript-eslint/eslint-plugin": "^5.61.0",
-        "@typescript-eslint/parser": "^5.61.0",
-        "@vitejs/plugin-react-swc": "^3.3.2",
-        "eslint": "^8.44.0",
-        "eslint-plugin-react-hooks": "^4.6.0",
-        "eslint-plugin-react-refresh": "^0.4.1",
-        "typescript": "^5.0.2",
-        "vite": "^4.4.0",
-        "@types/node": "~20.4.0",
-        "sass": "~1.63.6"
-    }
+  "name": "cino-react-ui",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "typings": "./dist/lib/index.d.ts",
+  "main": "./dist/cino-react-ui.umd.cjs",
+  "module": "./dist/cino-react-ui.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "build:watch": "tsc && vite build",
+    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "cino-core": "workspace:*",
+    "ahooks": "~3.7.8",
+    "vite-plugin-sass-dts": "~1.3.6",
+    "vite-plugin-dts": "~3.1.0",
+    "prettier": "~3.0.0",
+    "classnames": "~2.3.2",
+    "nanoid": "~4.0.2"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.2.6",
+    "@typescript-eslint/eslint-plugin": "^5.61.0",
+    "@typescript-eslint/parser": "^5.61.0",
+    "@vitejs/plugin-react-swc": "^3.3.2",
+    "eslint": "^8.44.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.1",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.0",
+    "@types/node": "~20.4.0",
+    "sass": "~1.63.6"
+  }
 }

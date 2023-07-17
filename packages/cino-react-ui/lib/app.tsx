@@ -1,18 +1,17 @@
-import { CinoModel } from './hooks/use-cino';
-import Desktop from './components/desktop';
-import React from 'react';
-import './app.scss';
+import { CinoModel } from "./hooks/use-cino";
+import Desktop from "./components/desktop";
+import React from "react";
+import "./app.scss";
 
 interface CinoDesktopProps {
-    children?: React.ReactNode | string;
+  children?: React.ReactNode | string;
 }
 
 export const CinoDesktop = ({ children }: CinoDesktopProps) => {
-    return (
-        <CinoModel.Provider>
-            {children}
-            123
-            <Desktop />
-        </CinoModel.Provider>
-    );
+  return (
+    <CinoModel.Provider>
+      {children}
+      <Desktop />
+    </CinoModel.Provider>
+  );
 };

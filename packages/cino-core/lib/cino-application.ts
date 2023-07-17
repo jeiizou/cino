@@ -1,6 +1,6 @@
-import { AppContext } from './app-context';
-import { CinoContext } from './cino-context';
-import { CinoLog } from './cino-log';
+import { AppContext } from "./app-context";
+import { CinoContext } from "./cino-context";
+import { CinoLog } from "./cino-log";
 
 export enum CinoAppStatus {
   original, // 初始状态
@@ -23,7 +23,7 @@ export interface CinoAppConfig {
    */
   config: {
     icon?: {
-      src?: '';
+      src?: string;
     };
     /**
      * 启动相关配置
@@ -32,7 +32,7 @@ export interface CinoAppConfig {
       /**
        * 启动类型
        */
-      type: 'docker';
+      type: "docker";
       /**
        * 该启动类型的其他配置项
        */
@@ -99,7 +99,7 @@ export class CinoApplication {
    */
   install(context: CinoContext) {
     if (this.appState !== CinoAppStatus.original) {
-      CinoLog.warn('app is not original');
+      CinoLog.warn("app is not original");
       return;
     }
 
@@ -120,14 +120,14 @@ export class CinoApplication {
    */
   activate() {
     if (this.appState === CinoAppStatus.activate) {
-      CinoLog.warn('app is already activated');
+      CinoLog.warn("app is already activated");
       return;
     }
 
     this.appState = CinoAppStatus.activate;
 
     if (!this.appContext) {
-      CinoLog.warn('app is not installed');
+      CinoLog.warn("app is not installed");
       return;
     }
 
@@ -139,14 +139,14 @@ export class CinoApplication {
    */
   deactivate() {
     if (this.appState !== CinoAppStatus.activate) {
-      CinoLog.warn('app is not activated');
+      CinoLog.warn("app is not activated");
       return;
     }
 
     this.appState = CinoAppStatus.deactivate;
 
     if (!this.appContext) {
-      CinoLog.warn('app is not installed');
+      CinoLog.warn("app is not installed");
       return;
     }
 
