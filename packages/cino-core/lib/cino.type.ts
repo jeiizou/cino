@@ -1,4 +1,4 @@
-import { CinoApplication } from './cino-application';
+import { CinoApplication } from "./cino-application";
 
 export interface CinoAppInfo {
   /**
@@ -38,7 +38,7 @@ export interface ViewConfig {
   /**
    * 渲染类型
    */
-  renderType?: 'iframe' | 'html' | 'react' | 'micro-app';
+  renderType?: "iframe" | "html" | "react" | "micro-app";
   /**
    * iframe 类型下的数据源
    */
@@ -54,14 +54,25 @@ export enum CinoEventsName {
   /**
    * 应用被安装
    */
-  AppInstall = 'app-install',
+  AppInstall = "app-install",
   /**
    * 注册了一个新的视口
    */
-  RegisterView = 'register-view',
+  RegisterView = "register-view",
+  /**
+   * 销毁一个窗口
+   */
+  DestroyView = "destroy-view",
 }
 
 export interface CinoEventsHandle {
-  [CinoEventsName.AppInstall]: (params: { id: string; app: CinoApplication }) => void;
-  [CinoEventsName.RegisterView]: (params: { viewId: string; info: ViewInfo }) => void;
+  [CinoEventsName.AppInstall]: (params: {
+    id: string;
+    app: CinoApplication;
+  }) => void;
+  [CinoEventsName.RegisterView]: (params: {
+    viewId: string;
+    info: ViewInfo;
+  }) => void;
+  [CinoEventsName.DestroyView]: (params: { viewId: string }) => void;
 }

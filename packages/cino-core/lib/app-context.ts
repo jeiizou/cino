@@ -1,6 +1,6 @@
-import { CinoApplication } from './cino-application';
-import { CinoContext } from './cino-context';
-import { ViewConfig } from './cino.type';
+import { CinoApplication } from "./cino-application";
+import { CinoContext } from "./cino-context";
+import { ViewConfig } from "./cino.type";
 
 export class AppContext {
   self: CinoApplication;
@@ -22,7 +22,11 @@ export class AppContext {
     });
   }
 
-  // activeWindow(viewId: string) {
-
-  // }
+  /**
+   * 销毁一个窗口
+   * @param viewId
+   */
+  destroyView(viewId: string) {
+    this.context.destroyView(viewId);
+  }
 }

@@ -1,22 +1,22 @@
-import { ViewInfo } from 'cino-core';
-import { createModel } from '@/hooks/basic/use-model';
-import { useEventEmitter } from 'ahooks';
-import { useState } from 'react';
+import { ViewInfo } from "cino-core";
+import { createModel } from "@/hooks/basic/use-model";
+import { useEventEmitter } from "ahooks";
+import { useState } from "react";
 
 export enum EVENT_TYPE {
-  WIN_REGIS = 'win_regis',
-  WIN_POSITION = 'win_position',
-  WIN_MIN = 'win_min',
-  WIN_CLOSE = 'win_close',
-  WIN_RESIZE = 'win_resize',
-  WIN_FOCUS = 'win_focus',
-  CANVAS_LEAVE = 'canvas_leave',
-  CANVAS_MOVING = 'canvas_moving',
-  CANVAS_CLICK = 'canvas_click',
-  BAR_SORT = 'bar_sort',
-  BOOT_START = 'boot_start',
-  APP_START = 'app_start',
-  APP_INSTALLED = 'app_installed',
+  WIN_REGIS = "win_regis",
+  WIN_POSITION = "win_position",
+  WIN_MIN = "win_min",
+  WIN_CLOSE = "win_close",
+  WIN_RESIZE = "win_resize",
+  WIN_FOCUS = "win_focus",
+  CANVAS_LEAVE = "canvas_leave",
+  CANVAS_MOVING = "canvas_moving",
+  CANVAS_CLICK = "canvas_click",
+  BAR_SORT = "bar_sort",
+  BOOT_START = "boot_start",
+  APP_START = "app_start",
+  APP_INSTALLED = "app_installed",
 }
 
 export type WindowInfo = {
@@ -52,7 +52,10 @@ function useWindowModel() {
     });
   };
 
-  const subscribe$ = (type: EVENT_TYPE, fn: (val?: Record<string, any>) => void) => {
+  const subscribe$ = (
+    type: EVENT_TYPE,
+    fn: (val?: Record<string, any>) => void
+  ) => {
     event$.useSubscription((val) => {
       if (val.type === type) {
         fn?.(val);
@@ -94,8 +97,7 @@ function useWindowModel() {
   subscribe$(EVENT_TYPE.APP_START, (val) => {
     if (!val) return;
     if (windowMap[val.id]) {
-      // 已存在
-      console.info('application loaded');
+      console.info("application loaded");
     } else {
       setWindowMap((map) => {
         map[val.id] = {
@@ -116,7 +118,7 @@ function useWindowModel() {
     }
   });
 
-  // 窗口最小化
+  // minimum window size
   subscribe$(EVENT_TYPE.WIN_MIN, (val) => {
     setWindowMap((map) => {
       if (map[val?.id]) {

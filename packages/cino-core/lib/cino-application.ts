@@ -160,4 +160,14 @@ export class CinoApplication {
   getViews() {
     return this.appContext?.context.getAllViewWithApp(this.getId());
   }
+
+  removeView(id: string) {
+    this.appContext?.destroyView(id);
+    const resViews = this.getViews();
+    // 当所有view都被卸载了
+    if (!resViews || Object.keys(resViews).length < 1) {
+      // 触发当前app卸载操作
+      this.deactivate();
+    }
+  }
 }

@@ -1,6 +1,6 @@
-import { nanoid } from 'nanoid';
-import { CinoEventsHandle, CinoEventsName, ViewInfo } from './cino.type';
-import { CinoEventBus } from './cino-events';
+import { nanoid } from "nanoid";
+import { CinoEventsHandle, CinoEventsName, ViewInfo } from "./cino.type";
+import { CinoEventBus } from "./cino-events";
 
 export class CinoContext {
   private views: Map<string, ViewInfo> = new Map();
@@ -19,6 +19,16 @@ export class CinoContext {
       info,
     });
     return viewId;
+  }
+
+  public destroyView(viewId: string) {
+    const hasView = this.views.has(viewId);
+    if (hasView) {
+      this.views.delete(viewId);
+      this.event.emit(CinoEventsName.DestroyView, {
+        viewId,
+      });
+    }
   }
 
   public getViewMap() {
