@@ -440,6 +440,10 @@
     {
       "packageName": "cino-apps",
       "projectFolder": "packages/cino-apps"
+    },
+    {
+      "packageName": "cino-site",
+      "projectFolder": "apps/cino-site"
     }
   ]
 }
