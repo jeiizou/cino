@@ -11,6 +11,7 @@ export const CinoDesktop = ({ children }: CinoDesktopProps) => {
     return (
         <CinoModel.Provider>
             {children}
+            123
             <Desktop />
         </CinoModel.Provider>
     );
