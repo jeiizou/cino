@@ -5,6 +5,53 @@ importers:
   .:
     specifiers: {}
 
+  ../../packages/cino-apps:
+    specifiers:
+      '@types/node': ~20.4.0
+      '@types/react': ^18.2.14
+      '@types/react-dom': ^18.2.6
+      '@typescript-eslint/eslint-plugin': ^5.61.0
+      '@typescript-eslint/parser': ^5.61.0
+      '@vitejs/plugin-react-swc': ^3.3.2
+      ahooks: ~3.7.8
+      classnames: ~2.3.2
+      eslint: ^8.44.0
+      eslint-plugin-react-hooks: ^4.6.0
+      eslint-plugin-react-refresh: ^0.4.1
+      nanoid: ~4.0.2
+      postcss: ~8.4.26
+      prettier: ~3.0.0
+      react: ^18.2.0
+      react-dom: ^18.2.0
+      sass: ~1.63.6
+      typescript: ^5.0.2
+      vite: ^4.4.0
+      vite-plugin-dts: ~3.1.0
+      vite-plugin-sass-dts: ~1.3.6
+    dependencies:
+      ahooks: 3.7.8_react@18.2.0
+      classnames: 2.3.2
+      nanoid: 4.0.2
+      prettier: 3.0.0
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      vite-plugin-dts: 3.1.0_e0063b9fd5f8ea819f9b85fb0edb1e65
+      vite-plugin-sass-dts: 1.3.6_3533a28c01b6ca45c9f812bb59e0bba0
+    devDependencies:
+      '@types/node': 20.4.0
+      '@types/react': 18.2.14
+      '@types/react-dom': 18.2.6
+      '@typescript-eslint/eslint-plugin': 5.61.0_d72bb1d109f803f8cc25cf219b7c62ed
+      '@typescript-eslint/parser': 5.61.0_eslint@8.44.0+typescript@5.1.6
+      '@vitejs/plugin-react-swc': 3.3.2_vite@4.4.0
+      eslint: 8.44.0
+      eslint-plugin-react-hooks: 4.6.0_eslint@8.44.0
+      eslint-plugin-react-refresh: 0.4.1_eslint@8.44.0
+      postcss: 8.4.26
+      sass: 1.63.6
+      typescript: 5.1.6
+      vite: 4.4.0_@types+node@20.4.0+sass@1.63.6
+
   ../../packages/cino-core:
     specifiers:
       '@types/react': ~18.2.14
@@ -1599,6 +1646,16 @@ packages:
       camelcase-css: 2.0.1
     dev: false
 
+  /postcss-js/4.0.1_postcss@8.4.26:
+    resolution: {integrity: sha512-dDLF8pEO191hJMtlHFPRa8xsizHaM82MLfNkUHdUtVEV3tgTp5oj+8qbEqYM57SLfc74KSbw//4SeJma2LRVIw==}
+    engines: {node: ^12 || ^14 || >= 16}
+    peerDependencies:
+      postcss: ^8.4.21
+    dependencies:
+      camelcase-css: 2.0.1
+      postcss: 8.4.26
+    dev: false
+
   /postcss/8.4.25:
     resolution: {integrity: sha512-7taJ/8t2av0Z+sQEvNzCkpDynl0tX3uJMCODi6nT3PfASC7dYCWV9aQ+uiCf+KBD4SEFcu+GvJdGdwzQ6OSjCw==}
     engines: {node: ^10 || ^12 || >=14}
@@ -1606,6 +1663,15 @@ packages:
       nanoid: 3.3.6
       picocolors: 1.0.0
       source-map-js: 1.0.2
+
+  /postcss/8.4.26:
+    resolution: {integrity: sha512-jrXHFF8iTloAenySjM/ob3gSj7pCu0Ji49hnjqzsgSRa50hkWCKD0HQ+gMNJkW38jBI68MpAAg7ZWwHwX8NMMw==}
+    engines: {node: ^10 || ^12 || >=14}
+    dependencies:
+      nanoid: 3.3.6
+      picocolors: 1.0.0
+      source-map-js: 1.0.2
+    dev: true
 
   /prelude-ls/1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
@@ -1904,6 +1970,22 @@ packages:
       vite: ^3 || ^4
     dependencies:
       postcss-js: 4.0.1
+      prettier: 3.0.0
+      sass: 1.63.6
+      vite: 4.4.0_@types+node@20.4.0+sass@1.63.6
+    dev: false
+
+  /vite-plugin-sass-dts/1.3.6_3533a28c01b6ca45c9f812bb59e0bba0:
+    resolution: {integrity: sha512-0Z1Uu4cOhN+ZPlZ+I5j+dAyFhCPwvjfjaDEBmA3DNJ7WxYQrCSx8c92ZzT3qxaNZESLw7/6uVQ6EBfEahNSWzg==}
+    engines: {node: ^14.18.0 || >=16.0.0}
+    peerDependencies:
+      postcss: ^8
+      prettier: ^2.7
+      sass: '*'
+      vite: ^3 || ^4
+    dependencies:
+      postcss: 8.4.26
+      postcss-js: 4.0.1_postcss@8.4.26
       prettier: 3.0.0
       sass: 1.63.6
       vite: 4.4.0_@types+node@20.4.0+sass@1.63.6

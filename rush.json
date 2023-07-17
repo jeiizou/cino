@@ -436,6 +436,10 @@
     {
       "packageName": "cino-react-ui",
       "projectFolder": "packages/cino-react-ui"
+    },
+    {
+      "packageName": "cino-apps",
+      "projectFolder": "packages/cino-apps"
     }
   ]
 }
