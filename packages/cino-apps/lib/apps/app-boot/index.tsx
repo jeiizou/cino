@@ -2,10 +2,6 @@ import { Cino, CinoEventsName } from "cino-core";
 import AppBoot from "./components/App";
 import AppSVG from "./components/app.svg";
 
-export interface AppBootProps {
-  title?: string;
-}
-
 export const AppBootstrapApp = Cino.createApp({
   id: "app-bootstrap",
   name: "应用启动器",
@@ -29,6 +25,7 @@ export const AppBootstrapApp = Cino.createApp({
       if (curApp.getId() == app.self.getId()) {
         return;
       }
+      // 排除所有在docker中的应用
       if (curApp.getConfig().boot?.find((i) => i.type === "docker")) {
         return;
       }
@@ -39,7 +36,7 @@ export const AppBootstrapApp = Cino.createApp({
     // 激活应用的时候创建一个窗口
     app.createView({
       title: "应用启动器",
-      container: <AppBoot appMap={this.appMap} />,
+      container: AppBoot,
       renderType: "react",
       size: {
         width: 800,

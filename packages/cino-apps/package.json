@@ -5,7 +5,7 @@
   "type": "module",
   "main": "./dist/cino-apps.umd.cjs",
   "module": "./dist/cino-apps.js",
-  "typings": "./dist/lib/index.d.ts",
+  "types": "./dist/lib/index.d.ts",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",

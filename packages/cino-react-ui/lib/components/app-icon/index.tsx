@@ -1,18 +1,22 @@
-import { CinoAppStatus, CinoApplication } from 'cino-core';
-import React, { useMemo } from 'react';
-import style from './index.module.scss';
-import classNames from 'classnames';
-import { EVENT_TYPE, WindowInfo, WindowModel } from '../window-layout/window-model';
+import { CinoAppStatus, CinoApplication } from "cino-core";
+import React, { useMemo } from "react";
+import style from "./index.module.scss";
+import classNames from "classnames";
+import {
+  EVENT_TYPE,
+  WindowInfo,
+  WindowModel,
+} from "../window-layout/window-model";
 
 type AppIconProps = {
-  size?: 'small' | 'medium' | 'large';
+  size?: "small" | "medium" | "large";
   app: CinoApplication;
   showName?: boolean;
 };
 
 export default function AppIcon({
   app,
-  size = 'medium',
+  size = "medium",
   showName = false,
 }: AppIconProps): React.ReactElement {
   const { emit$, windowMap } = WindowModel.useContext();
@@ -20,6 +24,7 @@ export default function AppIcon({
     return app.getConfig()?.icon?.src;
   }, [app]);
 
+  // 当前app的所有窗口
   const windowList = useMemo(() => {
     const lWindowList: (WindowInfo & { winKey: string })[] = [];
     const keys = Object.keys(windowMap);
@@ -60,14 +65,16 @@ export default function AppIcon({
     <div className={style.app_icon__container}>
       <div
         className={classNames(style.app_icon, `${style.app_icon}--${size}`, {
-          [style['app_icon--hidden']]: isHidden,
+          [style["app_icon--hidden"]]: isHidden,
         })}
         onClick={onIconClick}
       >
         <img src={iconSrc} alt={app.name} />
         <span className={style.app_icon__name}>{app.name}</span>
       </div>
-      {showName && <div className={style['app_icon_show-name']}>{app.name}</div>}
+      {showName && (
+        <div className={style["app_icon_show-name"]}>{app.name}</div>
+      )}
     </div>
   );
 }

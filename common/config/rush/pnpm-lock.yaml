@@ -12,6 +12,7 @@ importers:
       "@typescript-eslint/parser": ^5.61.0
       "@vitejs/plugin-react-swc": ^3.3.2
       cino-apps: workspace:*
+      cino-core: workspace:*
       cino-react-ui: workspace:*
       eslint: ^8.44.0
       eslint-plugin-react-hooks: ^4.6.0
@@ -22,6 +23,7 @@ importers:
       vite: ^4.4.0
     dependencies:
       cino-apps: link:../../packages/cino-apps
+      cino-core: link:../../packages/cino-core
       cino-react-ui: link:../../packages/cino-react-ui
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0

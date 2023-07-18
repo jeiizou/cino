@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "typings": "./dist/index.d.ts",
+  "types": "./dist/index.d.ts",
   "main": "./dist/cino-core.umd.cjs",
   "module": "./dist/cino-core.js",
   "exports": {

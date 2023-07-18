@@ -50,6 +50,7 @@ export default function WindowViews({}: WindowViewsProps): React.ReactElement {
     <React.Fragment>
       {Object.keys(views).map((viewKey) => {
         const viewInfo = views[viewKey];
+        const Container = viewInfo?.config?.container;
         return (
           <WindowBox
             windowName={viewInfo.config.title}
@@ -61,8 +62,9 @@ export default function WindowViews({}: WindowViewsProps): React.ReactElement {
             {viewInfo.config.renderType === "iframe" && viewInfo.config.url && (
               <IframeRender url={viewInfo.config.url}></IframeRender>
             )}
-            {viewInfo.config.renderType === "react" &&
-              viewInfo.config.container}
+            {viewInfo.config.renderType === "react" && Container && (
+              <Container />
+            )}
           </WindowBox>
         );
       })}

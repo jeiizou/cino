@@ -169,7 +169,7 @@ export default function WindowBox({
           {windowName}
         </div>
       </div>
-      {children}
+      <div className={styles["window-box__header__body"]}>{children}</div>
     </div>
   );
 }

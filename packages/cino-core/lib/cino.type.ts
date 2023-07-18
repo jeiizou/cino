@@ -34,7 +34,7 @@ export interface ViewConfig {
   /**
    * 容器
    */
-  container?: string | React.ReactNode | React.ReactElement;
+  container?: string | ((props: any) => React.ReactElement);
   /**
    * 渲染类型
    */

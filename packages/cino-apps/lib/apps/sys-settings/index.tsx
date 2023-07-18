@@ -1,9 +1,30 @@
-import React from 'react';
+import { Cino } from "cino-core";
+import SysSetting from "./ui/App";
+import SettingIconSvg from "./ui/setting.svg";
 
-export interface SysSettingsProps {
-    title?: string;
-}
-
-export function SysSettings({ title }: SysSettingsProps): React.ReactElement {
-    return <div>SysSettings {title}</div>;
-}
+export const SysSettingApp = Cino.createApp({
+  id: "sys-setting",
+  name: "系统设置",
+  config: {
+    icon: {
+      src: SettingIconSvg,
+    },
+    boot: [
+      {
+        type: "docker",
+        persistence: true,
+      },
+    ],
+  },
+  onActivate: (app) => {
+    app.createView({
+      title: "系统设置",
+      container: SysSetting,
+      renderType: "react",
+      size: {
+        width: 800,
+        height: 400,
+      },
+    });
+  },
+});

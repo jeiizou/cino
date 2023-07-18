@@ -56,3 +56,7 @@
     cursor: auto;
   }
 }
+
+.window-box__header__body {
+  height: calc(100% - 30px);
+}

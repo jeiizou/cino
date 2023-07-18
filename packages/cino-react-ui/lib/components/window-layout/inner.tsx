@@ -1,14 +1,15 @@
-import React, { useEffect, useRef } from 'react';
-import styles from './styles.module.scss';
-import { EVENT_TYPE, WindowModel } from './window-model';
-import { useSize } from 'ahooks';
-import WindowDocker from '../window-docker';
+import React, { useEffect, useRef } from "react";
+import styles from "./styles.module.scss";
+import { EVENT_TYPE, WindowModel } from "./window-model";
+import { useSize } from "ahooks";
 
 export type WindowLayoutInnerProps = {
   children: React.ReactNode;
 };
 
-export default function WindowLayoutInner({ children }: WindowLayoutInnerProps): React.ReactElement {
+export default function WindowLayoutInner({
+  children,
+}: WindowLayoutInnerProps): React.ReactElement {
   const { setContainerSize, emit$ } = WindowModel.useContext();
 
   const containerDom = useRef<HTMLDivElement>(null);
@@ -40,17 +41,15 @@ export default function WindowLayoutInner({ children }: WindowLayoutInnerProps):
   };
 
   return (
-    <>
-      <div
-        className={styles['window-layout']}
-        onMouseMove={onMouseMove}
-        onMouseLeave={onMouseLeave}
-        onMouseUp={onMouseLeave}
-        onClick={onClick}
-        ref={containerDom}
-      >
-        {children}
-      </div>
-    </>
+    <div
+      className={styles["window-layout"]}
+      onMouseMove={onMouseMove}
+      onMouseLeave={onMouseLeave}
+      onMouseUp={onMouseLeave}
+      onClick={onClick}
+      ref={containerDom}
+    >
+      {children}
+    </div>
   );
 }

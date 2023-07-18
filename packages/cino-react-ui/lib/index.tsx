@@ -4,3 +4,5 @@ export { CinoDesktop } from "./app";
 export { AppRegister } from "./components/app-register";
 
 export { AppIcon };
+
+export { WindowModel } from "./components/window-layout/window-model";
