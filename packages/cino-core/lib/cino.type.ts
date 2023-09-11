@@ -36,6 +36,10 @@ export interface ViewConfig {
    */
   container?: string | ((props: any) => React.ReactElement);
   /**
+   * 容器属性
+   */
+  containerProps?: Record<string, any>;
+  /**
    * 渲染类型
    */
   renderType?: "iframe" | "html" | "react" | "micro-app";

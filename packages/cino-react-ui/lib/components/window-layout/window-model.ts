@@ -128,6 +128,15 @@ function useWindowModel() {
     });
   });
 
+  subscribe$(EVENT_TYPE.WIN_CLOSE, (val)=>{
+    setWindowMap((map)=>{
+      if(map[val?.id]){
+        delete map[val?.id];
+      }
+      return {...map}
+    })
+  })
+
   return {
     emit$,
     subscribe$,

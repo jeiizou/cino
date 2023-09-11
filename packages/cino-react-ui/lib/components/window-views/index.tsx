@@ -52,6 +52,8 @@ export default function WindowViews({}: WindowViewsProps): React.ReactElement {
     const app = cino?.getAppByAppId(viewInfo.appId);
     // 移除该view
     app?.removeView(viewKey);
+    // 移除window对象
+    emit$(EVENT_TYPE.WIN_CLOSE, {id: viewKey});
   };
 
   return (
