@@ -3,6 +3,8 @@ import { CinoModel } from "@/hooks/use-cino";
 import React, { useEffect, useMemo, useState } from "react";
 import WindowBox from "../window-box";
 import IframeRender from "../app-render/iframe-render";
+import AppIcon from "../app-icon";
+import { EVENT_TYPE, WindowModel } from "../window-layout/window-model";
 
 type WindowViewsProps = {
   // HOLD
@@ -10,6 +12,7 @@ type WindowViewsProps = {
 
 export default function WindowViews({}: WindowViewsProps): React.ReactElement {
   const { cino } = CinoModel.useContext();
+  const { emit$ } = WindowModel.useContext();
   const [views, setViews] = useState<Record<string, ViewInfo>>({});
 
   useEffect(() => {
@@ -28,6 +31,11 @@ export default function WindowViews({}: WindowViewsProps): React.ReactElement {
             ...oldViews,
           };
         });
+        setTimeout(() => {
+          emit$(EVENT_TYPE.WIN_FOCUS, {
+            id: viewId,
+          });
+        }, 500);
       });
       cino.events.on(CinoEventsName.DestroyView, ({ viewId }) => {
         setViews((oldViews) => {
@@ -51,6 +59,7 @@ export default function WindowViews({}: WindowViewsProps): React.ReactElement {
       {Object.keys(views).map((viewKey) => {
         const viewInfo = views[viewKey];
         const Container = viewInfo?.config?.container;
+        const ContainerProps = viewInfo?.config?.containerProps ?? {};
         return (
           <WindowBox
             windowName={viewInfo.config.title}
@@ -60,10 +69,10 @@ export default function WindowViews({}: WindowViewsProps): React.ReactElement {
             onClose={() => closeView(viewKey, viewInfo)}
           >
             {viewInfo.config.renderType === "iframe" && viewInfo.config.url && (
-              <IframeRender url={viewInfo.config.url}></IframeRender>
+              <IframeRender url={viewInfo.config.url} />
             )}
             {viewInfo.config.renderType === "react" && Container && (
-              <Container />
+              <Container {...ContainerProps} AppContainer={AppIcon} />
             )}
           </WindowBox>
         );

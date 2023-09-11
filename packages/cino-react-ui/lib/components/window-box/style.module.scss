@@ -2,20 +2,22 @@
   position: absolute;
   border: 1px solid #c12c1f;
   border-radius: var(--box-radius);
-  overflow: auto;
+  overflow: hidden;
   resize: both;
   box-shadow: 0 0 10px #9aa7b1;
+  box-sizing: border-box;
   min-width: 170px;
   min-height: 70px;
 }
 
 .window-box__header {
   background-color: #fff;
-  height: 20px;
+  height: 30px;
 
   font-size: 12px;
   padding: 5px;
   text-align: center;
+  box-sizing: border-box;
 
   cursor: move;
 
@@ -59,4 +61,5 @@
 
 .window-box__header__body {
   height: calc(100% - 30px);
+  // overflow: hidden;
 }

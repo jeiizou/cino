@@ -9,23 +9,43 @@ import {
 } from "../window-layout/window-model";
 
 type AppIconProps = {
+  /**
+   * 图标尺寸
+   */
   size?: "small" | "medium" | "large";
+  /**
+   * 应用数据
+   */
   app: CinoApplication;
+  /**
+   * 是否展示应用名称
+   */
   showName?: boolean;
 };
 
+/**
+ * App Icon 组件
+ * @param param0
+ * @returns
+ */
 export default function AppIcon({
   app,
   size = "medium",
   showName = false,
 }: AppIconProps): React.ReactElement {
-  const { emit$, windowMap } = WindowModel.useContext();
+  const windowModelContext = WindowModel.useContext();
+  const { emit$, windowMap } = windowModelContext ?? {};
+
   const iconSrc = useMemo(() => {
     return app.getConfig()?.icon?.src;
   }, [app]);
 
   // 当前app的所有窗口
   const windowList = useMemo(() => {
+    if (!windowMap) {
+      return [];
+    }
+
     const lWindowList: (WindowInfo & { winKey: string })[] = [];
     const keys = Object.keys(windowMap);
     keys.forEach((key) => {
@@ -48,17 +68,17 @@ export default function AppIcon({
   }, [windowList]);
 
   const onIconClick = () => {
-    if (app.status === CinoAppStatus.activate) {
-      // app 已激活, 执行聚焦操作
-      windowList.forEach((w) => {
-        if (w?.viewInfo?.appId === app.getId()) {
-          emit$(EVENT_TYPE.WIN_FOCUS, { id: w.winKey });
-        }
-      });
-    } else {
+    if (app.status !== CinoAppStatus.activate) {
       // 激活该APP
       app.activate();
     }
+
+    // app 已激活, 执行聚焦操作
+    windowList.forEach((w) => {
+      if (w?.viewInfo?.appId === app.getId()) {
+        emit$?.(EVENT_TYPE.WIN_FOCUS, { id: w.winKey });
+      }
+    });
   };
 
   return (

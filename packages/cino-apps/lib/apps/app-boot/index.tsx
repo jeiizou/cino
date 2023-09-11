@@ -5,7 +5,6 @@ import AppSVG from "./components/app.svg";
 export const AppBootstrapApp = Cino.createApp({
   id: "app-bootstrap",
   name: "应用启动器",
-
   config: {
     icon: {
       src: AppSVG,
@@ -17,7 +16,6 @@ export const AppBootstrapApp = Cino.createApp({
       },
     ],
   },
-
   appMap: {},
   onInitialize(app) {
     const event = app.context.getEvent();
@@ -37,6 +35,9 @@ export const AppBootstrapApp = Cino.createApp({
     app.createView({
       title: "应用启动器",
       container: AppBoot,
+      containerProps: {
+        appMap: this.appMap,
+      },
       renderType: "react",
       size: {
         width: 800,
