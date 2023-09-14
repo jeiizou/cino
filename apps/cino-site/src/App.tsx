@@ -1,10 +1,10 @@
-import { CinoDesktop, AppRegister } from "cino-react-ui";
-import { AppBootstrapApp, SysSettingApp } from "cino-apps";
-import "cino-react-ui/dist/style.css";
-import "cino-apps/dist/style.css";
-import "./App.css";
+import { CinoDesktop, AppRegister } from 'cino-react-ui';
+import { AppBootstrapApp, SysSettingApp } from 'cino-apps';
+import 'cino-react-ui/dist/style.css';
+import 'cino-apps/dist/style.css';
+import './App.css';
 
-import { JuejinApp } from "./apps/bing-search";
+import { JuejinApp } from './apps/bing-search';
 
 function App() {
   return (

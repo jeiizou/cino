@@ -1,20 +1,20 @@
-import { Cino, CinoEventsName } from "cino-core";
-import AppBoot from "./components/App";
-import AppSVG from "./components/app.svg";
+import { Cino, CinoEventsName } from 'cino-core';
+import AppBoot from './components/App';
+import AppSVG from './components/app.svg';
 
 export const AppBootstrapApp = Cino.createApp({
-  id: "app-bootstrap",
-  name: "应用启动器",
+  id: 'app-bootstrap',
+  name: '应用启动器',
   config: {
     icon: {
-      src: AppSVG,
+      src: AppSVG
     },
     boot: [
       {
-        type: "docker",
-        persistence: true,
-      },
-    ],
+        type: 'docker',
+        persistence: true
+      }
+    ]
   },
   appMap: {},
   onInitialize(app) {
@@ -24,7 +24,7 @@ export const AppBootstrapApp = Cino.createApp({
         return;
       }
       // 排除所有在docker中的应用
-      if (curApp.getConfig().boot?.find((i) => i.type === "docker")) {
+      if (curApp.getConfig().boot?.find((i) => i.type === 'docker')) {
         return;
       }
       this.appMap[curApp.getId()] = curApp;
@@ -33,16 +33,16 @@ export const AppBootstrapApp = Cino.createApp({
   onActivate(app) {
     // 激活应用的时候创建一个窗口
     app.createView({
-      title: "应用启动器",
+      title: '应用启动器',
       container: AppBoot,
       containerProps: {
-        appMap: this.appMap,
+        appMap: this.appMap
       },
-      renderType: "react",
+      renderType: 'react',
       size: {
-        width: 800,
-        height: 400,
-      },
+        width: 400,
+        height: 300
+      }
     });
-  },
+  }
 });

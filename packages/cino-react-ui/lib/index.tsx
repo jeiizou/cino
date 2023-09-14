@@ -1,8 +1,9 @@
-import AppIcon from "./components/app-icon";
+import AppIcon from './components/app-icon';
 
-export { CinoDesktop } from "./app";
-export { AppRegister } from "./components/app-register";
+export { CinoDesktop } from './app';
+export { AppRegister } from './components/app-register';
 
 export { AppIcon };
 
-export { WindowModel } from "./components/window-layout/window-model";
+export { WindowModel } from './components/window-layout/window-model';
+export { ConfigPanel } from './components/config-panel';
