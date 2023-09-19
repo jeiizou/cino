@@ -15,21 +15,23 @@ export interface ConfigPanelProps {
    */
   scope: string;
 }
-export function ConfigPanel({ config }: ConfigPanelProps): React.ReactElement {
+export function ConfigPanel({ config, scope }: ConfigPanelProps): React.ReactElement {
   return (
     <div className="flex">
-      <div className="w-12 flex-shrink-0">
-        <Anchor
-          items={config.map((group) => ({
-            key: group.groupId,
-            href: `#group-${group.groupId}`,
-            title: group.groupName
-          }))}
-        ></Anchor>
+      <div className="w-24 flex-shrink-0 bg-white">
+        <Anchor>
+          {config.map((group) => (
+            <Anchor.Link
+              key={group.groupId}
+              href={`#${scope}-${group.groupId}`}
+              title={group.groupName}
+            ></Anchor.Link>
+          ))}
+        </Anchor>
       </div>
       <div className="w-full ">
         {config.map((group) => (
-          <div key={group.groupId}>
+          <div key={group.groupId} id={`${scope}-${group.groupId}`}>
             {group.formilySchema && <FormilyRender formSchema={group.formilySchema} />}
           </div>
         ))}

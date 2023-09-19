@@ -6,39 +6,61 @@ import dts from 'vite-plugin-dts';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    plugins: [react(), sassDts(), dts()],
+  plugins: [react(), sassDts(), dts()],
   resolve: {
-    alias: {
-      '@': join(__dirname, 'lib'),
-      '@components': join(__dirname, 'lib/components'),
-    },
+    alias: [
+      // '@': join(__dirname, 'lib'),
+      // '@components': join(__dirname, 'lib/components'),
+      {
+        find: '@',
+        replacement: join(__dirname, 'lib')
+      },
+      {
+        find: '@components',
+        replacement: join(__dirname, 'lib/components')
+      },
+      {
+        find: /^~/,
+        replacement: ''
+      }
+    ]
   },
   css: {
     modules: {
       generateScopedName(name) {
         return `cino-${name}`;
+      }
+    },
+    // 预处理器配置项
+    preprocessorOptions: {
+      scss: {
+        // 一些配置项
       },
-    },
+      less: {
+        // 一些配置项
+        javascriptEnabled: true
+      }
+    }
   },
-    build: {
-        // reportCompressedSize: false,
-        lib: {
-            // Could also be a dictionary or array of multiple entry points
-            entry: resolve(__dirname, 'lib/index.tsx'), // eslint-disable-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
-            name: 'cino-react-ui',
-            // the proper extensions will be added
-            fileName: 'cino-react-ui',
-        },
-        rollupOptions: {
-            // 确保外部化处理那些你不想打包进库的依赖
-            external: ['react', 'react-dom'],
-            output: {
-                // 在 UMD 构建模式下为这些外部化的依赖提供一个全局变量
-                globals: {
-                    'react': 'React',
-                    'react-dom': 'ReactDOM',
-                },
-            },
-        },
+  build: {
+    // reportCompressedSize: false,
+    lib: {
+      // Could also be a dictionary or array of multiple entry points
+      entry: resolve(__dirname, 'lib/index.tsx'), // eslint-disable-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
+      name: 'cino-react-ui',
+      // the proper extensions will be added
+      fileName: 'cino-react-ui'
     },
+    rollupOptions: {
+      // 确保外部化处理那些你不想打包进库的依赖
+      external: ['react', 'react-dom'],
+      output: {
+        // 在 UMD 构建模式下为这些外部化的依赖提供一个全局变量
+        globals: {
+          react: 'React',
+          'react-dom': 'ReactDOM'
+        }
+      }
+    }
+  }
 });

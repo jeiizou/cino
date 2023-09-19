@@ -14,8 +14,7 @@
     "react-dom": "^18.2.0",
     "cino-react-ui": "workspace:*",
     "cino-apps": "workspace:*",
-    "cino-core": "workspace:*",
-    "antd": "~5.9.0"
+    "cino-core": "workspace:*"
   },
   "devDependencies": {
     "@types/react": "^18.2.14",

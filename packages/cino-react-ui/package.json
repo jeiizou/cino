@@ -23,10 +23,11 @@
     "prettier": "~3.0.0",
     "classnames": "~2.3.2",
     "nanoid": "~4.0.2",
-    "antd": "~5.9.0",
+    "antd": "4.22.8",
     "@formily/core": "~2.2.29",
     "@formily/react": "~2.2.29",
-    "@formily/antd": "~2.2.29"
+    "@formily/antd": "~2.2.29",
+    "prop-types": "~15.8.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.14",
