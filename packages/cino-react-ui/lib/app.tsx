@@ -4,7 +4,6 @@ import React from 'react';
 import './app.scss';
 import { composeProviders } from './hooks/basic/use-model';
 import { WindowModel } from './components/window-layout/window-model';
-import 'antd/dist/antd.css';
 
 interface CinoDesktopProps {
   children?: React.ReactNode | string;

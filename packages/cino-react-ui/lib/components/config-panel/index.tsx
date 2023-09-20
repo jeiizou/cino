@@ -3,6 +3,8 @@ import { ConfigPanelGroup } from './config-panel.type';
 import { Anchor } from 'antd';
 import FormilyRender from '../formily-render';
 
+import styles from './index.module.scss';
+
 export interface ConfigPanelProps {
   // 配置项
   config: ConfigPanelGroup[];
@@ -17,8 +19,8 @@ export interface ConfigPanelProps {
 }
 export function ConfigPanel({ config, scope }: ConfigPanelProps): React.ReactElement {
   return (
-    <div className="flex">
-      <div className="w-24 flex-shrink-0 bg-white">
+    <div className={styles['config-panel']}>
+      <div className={styles['config-panel-items']}>
         <Anchor>
           {config.map((group) => (
             <Anchor.Link
@@ -29,7 +31,7 @@ export function ConfigPanel({ config, scope }: ConfigPanelProps): React.ReactEle
           ))}
         </Anchor>
       </div>
-      <div className="w-full ">
+      <div className={styles['config-panel-schema']}>
         {config.map((group) => (
           <div key={group.groupId} id={`${scope}-${group.groupId}`}>
             {group.formilySchema && <FormilyRender formSchema={group.formilySchema} />}

@@ -1,0 +1,13 @@
+.config-panel {
+  display: flex;
+}
+
+.config-panel-items {
+  width: 200px;
+  flex-shrink: 0;
+  background-color: #fff;
+}
+
+.config-panel-schema {
+  width: 100%;
+}
