@@ -1,0 +1,60 @@
+{
+  "form": {
+    "labelCol": 6,
+    "wrapperCol": 12
+  },
+  "schema": {
+    "type": "object",
+    "properties": {
+      "background-type": {
+        "type": "string | number",
+        "title": "背景类型",
+        "x-decorator": "FormItem",
+        "x-component": "Radio.Group",
+        "enum": [
+          {
+            "children": [],
+            "label": "图片",
+            "value": "picture"
+          },
+          {
+            "children": [],
+            "label": "纯色",
+            "value": "color"
+          }
+        ],
+        "x-validator": [],
+        "x-component-props": {},
+        "x-decorator-props": {},
+        "name": "background-type",
+        "x-designable-id": "qmyidsfvjzh",
+        "x-index": 0
+      },
+      "picture-url": {
+        "type": "string",
+        "title": "图片地址",
+        "x-decorator": "FormItem",
+        "x-component": "Input",
+        "x-validator": [],
+        "x-component-props": {},
+        "x-decorator-props": {},
+        "name": "picture-url",
+        "x-designable-id": "vga8vm1s2c1",
+        "x-index": 1
+      },
+      "background-color": {
+        "type": "string",
+        "title": "颜色值",
+        "x-decorator": "FormItem",
+        "x-component": "Input",
+        "x-validator": [],
+        "x-component-props": {},
+        "x-decorator-props": {},
+        "name": "background-color",
+        "x-designable-id": "tqw2ibireah",
+        "x-index": 2
+      }
+    },
+    "x-designable-id": "nrv17vrtmxy"
+  }
+}
