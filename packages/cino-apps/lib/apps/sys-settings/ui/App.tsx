@@ -16,6 +16,16 @@ export default function SysSetting({}: SysSettingProps): React.ReactElement {
             groupId: 'background',
             groupName: '背景配置',
             formilySchema: backgroundSchema
+          },
+          {
+            groupId: 'functions',
+            groupName: '功能模式',
+            formilySchema: backgroundSchema
+          },
+          {
+            groupId: 'group-3',
+            groupName: '功能模式22',
+            formilySchema: backgroundSchema
           }
         ]}
         scope="sys-setting"

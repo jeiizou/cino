@@ -1,12 +1,12 @@
 import { defineConfig } from 'vite';
 import { join, resolve } from 'path';
 import react from '@vitejs/plugin-react-swc';
-import sassDts from 'vite-plugin-sass-dts';
+// import sassDts from 'vite-plugin-sass-dts';
 import dts from 'vite-plugin-dts';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), sassDts(), dts()],
+  plugins: [react(), dts()],
   resolve: {
     alias: [
       // '@': join(__dirname, 'lib'),

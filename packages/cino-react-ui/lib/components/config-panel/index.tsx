@@ -87,7 +87,7 @@ export function ConfigPanel({
             <div>{group.groupName}</div>
             {group.formilySchema && formMap[group.groupId] && (
               <FormilyRender
-                defaultValue={defaultValue?.[group.groupId]}
+                // defaultValue={defaultValue?.[group.groupId]}
                 form={formMap[group.groupId]}
                 formSchema={group.formilySchema}
               />
