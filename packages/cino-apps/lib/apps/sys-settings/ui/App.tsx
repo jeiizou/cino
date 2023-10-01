@@ -9,7 +9,7 @@ type SysSettingProps = {
 
 export default function SysSetting({}: SysSettingProps): React.ReactElement {
   return (
-    <div style={{ backgroundColor: '#eee', width: '100%', height: '100%' }}>
+    <div style={{ backgroundColor: '#fff', width: '100%', height: '100%' }}>
       <ConfigPanel
         config={[
           {
@@ -19,6 +19,9 @@ export default function SysSetting({}: SysSettingProps): React.ReactElement {
           }
         ]}
         scope="sys-setting"
+        onSaveConfig={(values) => {
+          console.log('values', values);
+        }}
       ></ConfigPanel>
     </div>
   );
