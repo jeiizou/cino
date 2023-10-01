@@ -16,7 +16,9 @@ export default function Demos({}: DemosProps): React.ReactElement {
       Demos
       <div
         style={{
-          border: '1px solid #aaa'
+          border: '1px solid #aaa',
+          height: 300
+          // overflow: 'auto'
         }}
       >
         <ConfigPanel
@@ -24,6 +26,16 @@ export default function Demos({}: DemosProps): React.ReactElement {
             {
               groupId: 'background',
               groupName: '背景配置',
+              formilySchema: backgroundSchema
+            },
+            {
+              groupId: 'functions',
+              groupName: '功能模式',
+              formilySchema: backgroundSchema
+            },
+            {
+              groupId: 'group-3',
+              groupName: '功能模式22',
               formilySchema: backgroundSchema
             }
           ]}
