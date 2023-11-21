@@ -1,14 +1,14 @@
-import { CinoAppConfig, CinoApplication } from "./cino-application";
-import { CinoContext } from "./cino-context";
-import { CinoEventBus } from "./cino-events";
-import { CinoEventsHandle, CinoEventsName } from "./cino.type";
+import { CinoAppConfig, CinoApplication } from './cino-application';
+import { CinoContext } from './cino-context';
+import { CinoEventBus } from './core/cino-events';
+import { CinoEventsHandle, CinoEventsName } from './cino.type';
 
 export interface CinoConfig {
   mode: string;
 }
 
 const defaultCinoConfig = {
-  mode: "default",
+  mode: 'default'
 };
 
 export class Cino {
@@ -54,7 +54,7 @@ export class Cino {
     this.#apps.set(appId, app);
     this.#event.emit(CinoEventsName.AppInstall, {
       id: appId,
-      app,
+      app
     });
   }
 

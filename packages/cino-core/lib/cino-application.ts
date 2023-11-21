@@ -1,14 +1,18 @@
-import { AppContext } from "./app-context";
-import { CinoContext } from "./cino-context";
-import { CinoLog } from "./cino-log";
+import { AppContext } from './app-context';
+import { CinoContext } from './cino-context';
+import { CinoLog } from './base/cino-log';
 
 export enum CinoAppStatus {
   original, // 初始状态
   initialized, // 已经被安装
   activate, // 激活中
-  deactivate, // 休眠中
+  deactivate // 休眠中
 }
 
+/**
+ * App 配置信息
+ * 创建App示例的时候需要传入的对象
+ */
 export interface CinoAppConfig {
   /**
    * 应用名称
@@ -32,7 +36,7 @@ export interface CinoAppConfig {
       /**
        * 启动类型
        */
-      type: "docker";
+      type: 'docker';
       /**
        * 该启动类型的其他配置项
        */
@@ -99,7 +103,7 @@ export class CinoApplication {
    */
   install(context: CinoContext) {
     if (this.appState !== CinoAppStatus.original) {
-      CinoLog.warn("app is not original");
+      CinoLog.warn('app is not original');
       return;
     }
 
@@ -107,7 +111,7 @@ export class CinoApplication {
     this.appState = CinoAppStatus.initialized;
     this.appContext = new AppContext({
       self: this,
-      context,
+      context
     });
 
     // init app-context
@@ -120,14 +124,14 @@ export class CinoApplication {
    */
   activate() {
     if (this.appState === CinoAppStatus.activate) {
-      CinoLog.warn("app is already activated");
+      CinoLog.warn('app is already activated');
       return;
     }
 
     this.appState = CinoAppStatus.activate;
 
     if (!this.appContext) {
-      CinoLog.warn("app is not installed");
+      CinoLog.warn('app is not installed');
       return;
     }
 
@@ -139,14 +143,14 @@ export class CinoApplication {
    */
   deactivate() {
     if (this.appState !== CinoAppStatus.activate) {
-      CinoLog.warn("app is not activated");
+      CinoLog.warn('app is not activated');
       return;
     }
 
     this.appState = CinoAppStatus.deactivate;
 
     if (!this.appContext) {
-      CinoLog.warn("app is not installed");
+      CinoLog.warn('app is not installed');
       return;
     }
 
