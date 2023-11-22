@@ -16,15 +16,20 @@
     "dev": "vite",
     "build": "vite build && tsc",
     "build:watch": "vite build && tsc",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
   },
   "devDependencies": {
     "@types/react": "~18.2.14",
     "typescript": "^5.0.2",
-    "vite": "^4.4.0"
+    "vite": "^4.4.0",
+    "vitest": "~0.34.6"
   },
   "dependencies": {
     "nanoid": "~4.0.2",
-    "rxjs": "~7.8.1"
+    "rxjs": "~7.8.1",
+    "inversify": "~6.0.2",
+    "reflect-metadata": "~0.1.13"
   }
 }

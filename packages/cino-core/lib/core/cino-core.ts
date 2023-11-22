@@ -1,3 +1,4 @@
+import { Application } from './application';
 import { ApplicationSet } from './application-set';
 import { CinoEventBus } from './cino-events';
 
@@ -18,9 +19,11 @@ export class CinoCore {
     // 初始化事件总线
     this.event = new CinoEventBus();
     // 初始化 应用对象组
-    ApplicationSet.getInstance().then((res) => {
-      this.applicationSet = res;
-      this.applicationSet.setCurCino(this);
-    });
+    this.applicationSet = new ApplicationSet();
+    this.applicationSet.setCurCino(this);
+  }
+
+  installApp(app: Application) {
+    this.applicationSet?.register(app);
   }
 }

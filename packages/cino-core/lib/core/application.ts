@@ -31,7 +31,7 @@ export interface ApplicationParams {
  */
 export class Application {
   private statusInfo: ApplicationStatus;
-  private curSet: ApplicationSet | undefined;
+  curSet: ApplicationSet | undefined;
 
   viewMap: ApplicationViewSet | null = null;
 
