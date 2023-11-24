@@ -1,3 +1,5 @@
+import 'reflect-metadata';
+
 import { Application } from './core/application';
 import { ApplicationSet } from './core/application-set';
 import { ApplicationStatus, ApplicationStatusInfo } from './core/application-status';
