@@ -50,4 +50,8 @@ export class ApplicationView {
   setCurViewSet(viewSet: ApplicationViewSet) {
     this.curViewSet = viewSet;
   }
+
+  getCurViewSet() {
+    return this.curViewSet;
+  }
 }

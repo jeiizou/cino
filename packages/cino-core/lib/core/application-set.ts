@@ -1,4 +1,3 @@
-import { AsyncSingleton } from '../base/async-singleton';
 import { Application } from './application';
 import { CinoCore } from './cino-core';
 

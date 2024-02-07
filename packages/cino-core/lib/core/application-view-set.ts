@@ -27,4 +27,8 @@ export class ApplicationViewSet {
   setApp(app: Application) {
     this.currentApp = app;
   }
+
+  getApp() {
+    return this.currentApp;
+  }
 }
